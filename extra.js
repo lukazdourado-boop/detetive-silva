@@ -260,3 +260,42 @@
   medirHz();
   requestAnimationFrame(tick);
 })();
+
+/* ── Menu (celular), link ativo e avisos de rolagem ─────────────────────── */
+(() => {
+  const botao = document.querySelector(".menu-botao"), menu = document.querySelector("#menu");
+  if (botao && menu) {
+    const fechar = () => { menu.classList.remove("aberto"); botao.setAttribute("aria-expanded", "false"); botao.setAttribute("aria-label", "Abrir menu"); document.body.style.overflow = ""; };
+    botao.addEventListener("click", () => {
+      const abrir = !menu.classList.contains("aberto");
+      menu.classList.toggle("aberto", abrir);
+      botao.setAttribute("aria-expanded", String(abrir));
+      botao.setAttribute("aria-label", abrir ? "Fechar menu" : "Abrir menu");
+      document.body.style.overflow = abrir ? "hidden" : "";
+    });
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", fechar));
+    addEventListener("keydown", (e) => { if (e.key === "Escape") fechar(); });
+    addEventListener("resize", () => { if (innerWidth > 760) fechar(); });
+  }
+
+  // link da seção atual fica destacado
+  const links = [...document.querySelectorAll('.menu a[href^="#"]')].filter((a) => !a.classList.contains("menu-cta"));
+  const secoes = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  const marcar = () => {
+    let atual = null;
+    for (const s of secoes) if (s.getBoundingClientRect().top <= innerHeight * 0.4) atual = s.id;
+    links.forEach((a) => a.classList.toggle("ativo", a.getAttribute("href") === "#" + atual));
+  };
+  addEventListener("scroll", marcar, { passive: true }); marcar();
+
+  // aviso "continue descendo" enquanto a cena fixa estiver rolando
+  const cenas = [...document.querySelectorAll(".aviso")].map((el) => ({ el, cena: el.closest(".cine, .manifesto") })).filter((c) => c.cena);
+  const atualizarAvisos = () => {
+    for (const { el, cena } of cenas) {
+      const r = cena.getBoundingClientRect(), curso = cena.offsetHeight - innerHeight;
+      const p = -r.top / (curso || 1);
+      el.classList.toggle("on", p > 0.01 && p < 0.9);
+    }
+  };
+  addEventListener("scroll", atualizarAvisos, { passive: true }); atualizarAvisos();
+})();
