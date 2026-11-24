@@ -377,3 +377,13 @@ button.whats { border: 0; padding: 0; cursor: pointer; font: inherit; }
 .whats-op:hover { background: rgb(37 211 102 / .3); transform: translateX(-3px); }
 .whats-op .zap-ico { width: 24px; height: 24px; color: #25d366; }
 @media (max-width: 420px) { .whats-menu { left: 16px; right: 16px; min-width: 0; } }
+
+/* aviso: só o texto principal; serviços só tem movimento no computador */
+.aviso-texto small { display: none; }
+.hz .aviso { bottom: 50px; }
+@media (max-width: 860px) { .hz .aviso { display: none; } }
+/* no celular a seta aponta para cima, igual ao texto "Deslize para cima" */
+@media (hover: none) {
+  .aviso-seta i { transform: rotate(-135deg); animation-name: aviso-seta-cima; }
+}
+@keyframes aviso-seta-cima { 0% { opacity: 0; translate: 0 6px; } 50% { opacity: 1; } 100% { opacity: 0; translate: 0 -6px; } }

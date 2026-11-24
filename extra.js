@@ -291,7 +291,7 @@
   addEventListener("scroll", marcar, { passive: true }); marcar();
 
   // aviso "continue descendo" enquanto a cena fixa estiver rolando
-  const cenas = [...document.querySelectorAll(".aviso")].map((el) => ({ el, cena: el.closest(".cine, .manifesto") })).filter((c) => c.cena);
+  const cenas = [...document.querySelectorAll(".aviso")].map((el) => ({ el, cena: el.closest(".cine, .manifesto, .hz") })).filter((c) => c.cena);
   const atualizarAvisos = () => {
     for (const { el, cena } of cenas) {
       const r = cena.getBoundingClientRect(), curso = cena.offsetHeight - innerHeight;
