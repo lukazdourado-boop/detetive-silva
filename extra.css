@@ -361,3 +361,19 @@
 .botao--zap { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #1faa59; border-color: #1faa59; color: #fff; }
 .botao--zap .zap-ico { color: #fff; width: 22px; height: 22px; }
 .chamada .botao--zap { margin-top: 10px; }
+
+/* ── WhatsApp flutuante com dois números ───────────────────────────────── */
+button.whats { border: 0; padding: 0; cursor: pointer; font: inherit; }
+.whats-menu { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: calc(max(18px, env(safe-area-inset-bottom)) + 70px); z-index: 61;
+  display: grid; gap: 8px; padding: 14px; min-width: 232px; border-radius: 18px;
+  background: rgb(14 11 11 / .92); border: 1px solid rgb(241 236 236 / .14);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 24px 50px -16px rgb(0 0 0 / .8);
+  opacity: 0; visibility: hidden; transform: translateY(10px) scale(.97); transform-origin: bottom right;
+  transition: opacity .3s var(--ease), transform .35s var(--ease), visibility 0s .3s; }
+.whats-menu.aberto { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.whats-menu-titulo { font: 600 11px/1 var(--fonte-texto); letter-spacing: .2em; text-transform: uppercase; color: #d3caca; padding: 2px 4px 6px; }
+.whats-op { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; text-decoration: none; color: #fff;
+  background: rgb(37 211 102 / .14); border: 1px solid rgb(37 211 102 / .35); font: 600 16px/1 var(--fonte-texto); transition: background .25s, transform .25s var(--ease); }
+.whats-op:hover { background: rgb(37 211 102 / .3); transform: translateX(-3px); }
+.whats-op .zap-ico { width: 24px; height: 24px; color: #25d366; }
+@media (max-width: 420px) { .whats-menu { left: 16px; right: 16px; min-width: 0; } }

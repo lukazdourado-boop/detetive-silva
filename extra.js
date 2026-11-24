@@ -301,3 +301,21 @@
   };
   addEventListener("scroll", atualizarAvisos, { passive: true }); atualizarAvisos();
 })();
+
+
+/* ── Botão flutuante do WhatsApp: escolher entre os dois números ────────── */
+(() => {
+  const S = window.SITE || {};
+  const botao = document.querySelector("button.whats"), menu = document.getElementById("whats-menu");
+  if (!botao || !menu) return;
+  const link = (n) => `https://wa.me/${String(n.numero).replace(/\D/g, "")}?text=${encodeURIComponent(n.mensagem || "")}`;
+  const a1 = menu.querySelector("[data-zap1]"), a2 = menu.querySelector("[data-zap2]");
+  if (a1 && S.whatsapp) a1.href = link(S.whatsapp);
+  if (a2 && S.whatsapp2) a2.href = link(S.whatsapp2);
+  const abrir = (v) => { menu.classList.toggle("aberto", v); botao.setAttribute("aria-expanded", String(v)); };
+  botao.addEventListener("click", () => abrir(!menu.classList.contains("aberto")));
+  menu.addEventListener("click", (ev) => { if (ev.target.closest("a")) abrir(false); });
+  document.addEventListener("click", (ev) => { if (!ev.target.closest("#whats-menu, button.whats")) abrir(false); });
+  addEventListener("keydown", (ev) => { if (ev.key === "Escape") abrir(false); });
+  addEventListener("scroll", () => { if (!botao.classList.contains("visivel")) abrir(false); }, { passive: true });
+})();
