@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lukazdourado-boop.github.io/detetive-silva/sitemap.xml

@@ -1,0 +1,33 @@
+.pagina-artigo { background: var(--fundo); color: var(--texto); }
+.artigo { padding: clamp(96px, 14vh, 140px) var(--gutter) 72px; }
+.artigo article { max-width: 780px; margin: 0 auto; }
+.migalhas { font-size: 13px; color: var(--texto-suave); margin-bottom: 22px; display: flex; gap: 8px; flex-wrap: wrap; }
+.migalhas a { color: var(--texto-suave); text-decoration: none; }
+.migalhas a:hover { color: var(--texto); }
+.artigo-cabeca h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.04; margin: 0 0 22px; }
+.artigo-resumo { font-size: clamp(18px, 2.2vw, 21px); line-height: 1.55; color: var(--texto); }
+.artigo-meta { font-size: 13px; letter-spacing: .02em; }
+.artigo-cabeca { padding-bottom: 28px; border-bottom: 1px solid var(--linha); margin-bottom: 32px; }
+.sumario { margin: 0 0 44px; }
+.sumario strong { display: block; font-family: var(--fonte-titulo); font-weight: 400; font-size: 26px; margin-bottom: 14px; }
+.sumario ol { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.sumario a { color: var(--texto-suave); text-decoration: none; transition: color .3s; }
+.sumario a:hover { color: var(--texto); }
+.sumario li::marker { color: var(--acento); font-weight: 600; }
+.artigo section { margin-bottom: 56px; scroll-margin-top: 90px; }
+.artigo h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0 0 20px; }
+.artigo h3 { font-size: clamp(21px, 2.6vw, 26px); margin: 32px 0 10px; color: var(--texto); }
+.artigo p, .artigo li { font-size: 17.5px; line-height: 1.75; }
+.artigo p { color: #cfc6c6; }
+.artigo strong { color: var(--texto); font-weight: 600; }
+.artigo a { color: #ff6b75; text-underline-offset: 3px; }
+.artigo ul, .artigo ol { padding-left: 1.3em; display: grid; gap: 12px; margin: 0 0 1.2em; color: #cfc6c6; }
+.artigo li::marker { color: var(--acento); }
+.chamada { text-align: center; display: grid; justify-items: center; gap: 6px; margin: 36px 0 24px; }
+.chamada h2 { margin-bottom: 4px; }
+.chamada .botao { margin-top: 12px; text-decoration: none; }
+.chamada a { color: inherit; }
+.botao--vazado { background: transparent; border: 1px solid var(--linha); color: var(--texto); }
+.botao--vazado:hover { border-color: var(--acento); }
+.aviso-legal { font-size: 13px !important; color: var(--texto-suave) !important; }
+@media (max-width: 760px) { .artigo p, .artigo li { font-size: 17px; } }
