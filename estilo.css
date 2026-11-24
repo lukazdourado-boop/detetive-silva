@@ -236,3 +236,4 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 body::after { opacity: .035; }
 p, li { font-weight: 450; }
 h1, h2 { font-weight: 400; }
+@media (max-width: 760px) { .cabecalho .marca-texto, header .marca-texto { font-size: 15px; white-space: nowrap; } }
