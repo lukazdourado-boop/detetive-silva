@@ -230,3 +230,9 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
   /* Só desliga o que se mexe sozinho. O que responde à rolagem continua. */
   body::after, .whats::after, .cine-dica span { animation: none !important; }
 }
+
+/* ── Leitura mais confortável na página principal ──────────────────────── */
+:root { --texto-suave: #d3caca; --painel: rgb(16 12 12 / .8); }
+body::after { opacity: .035; }
+p, li { font-weight: 450; }
+h1, h2 { font-weight: 400; }

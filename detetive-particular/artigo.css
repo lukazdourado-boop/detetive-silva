@@ -31,3 +31,34 @@
 .botao--vazado:hover { border-color: var(--acento); }
 .aviso-legal { font-size: 13px !important; color: var(--texto-suave) !important; }
 @media (max-width: 760px) { .artigo p, .artigo li { font-size: 17px; } }
+
+/* ── Modo leitura: fundo creme, letra escura, sem grão por cima do texto ── */
+body.pagina-artigo {
+  --fundo: #f5f0e8; --fundo-2: #ece5d9; --texto: #211d19; --texto-suave: #4a423a;
+  --linha: rgb(33 29 25 / .16); --painel: #fbf8f2; --acento: #b30f1c; --mistura: multiply;
+  background: var(--fundo); color: var(--texto);
+}
+body.pagina-artigo::after { display: none; }
+body.pagina-artigo .topo.rolou { background: rgb(245 240 232 / .92); }
+body.pagina-artigo .painel { backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: 0 1px 0 rgb(33 29 25 / .04), 0 18px 40px -28px rgb(33 29 25 / .35); }
+body.pagina-artigo .artigo h1, body.pagina-artigo .artigo h2, body.pagina-artigo .artigo h3 { font-weight: 400; color: var(--texto); }
+body.pagina-artigo .artigo p, body.pagina-artigo .artigo li { color: #2e2823; font-weight: 450; }
+body.pagina-artigo .artigo .artigo-resumo { color: #211d19; }
+body.pagina-artigo .artigo strong { color: #14110e; font-weight: 700; }
+body.pagina-artigo .artigo a { color: #a30d19; text-decoration-thickness: 1px; }
+body.pagina-artigo .artigo a:hover { color: #7d0912; }
+body.pagina-artigo .migalhas, body.pagina-artigo .migalhas a, body.pagina-artigo .sumario a { color: #4a423a; }
+body.pagina-artigo .sumario a:hover, body.pagina-artigo .migalhas a:hover { color: #14110e; }
+body.pagina-artigo .artigo .aviso-legal { color: #5b5249 !important; }
+body.pagina-artigo .rotulo { color: var(--acento); font-weight: 600; }
+body.pagina-artigo .menu-cta { color: #fff; }
+body.pagina-artigo .menu a { opacity: 1; }
+body.pagina-artigo .chamada .botao { color: #fff; }
+body.pagina-artigo .chamada .botao--vazado { color: var(--texto); background: transparent; }
+body.pagina-artigo .rodape-painel, body.pagina-artigo .rodape-painel p, body.pagina-artigo .rodape-painel span { color: #3a332d; }
+body.pagina-artigo .rodape .marca-texto { color: var(--texto); }
+@media (max-width: 760px) {
+  body.pagina-artigo .menu { background: radial-gradient(90% 50% at 50% 0%, rgb(179 15 28 / .10), transparent 70%), rgb(245 240 232 / .98); }
+  body.pagina-artigo .menu a:not(.menu-cta) { color: var(--texto); }
+}
+.pagina-artigo .artigo p, .pagina-artigo .artigo li { font-size: 18px; line-height: 1.8; }
