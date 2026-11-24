@@ -105,6 +105,8 @@
   /* ── Link do WhatsApp nos contatos ──────────────────────────────────── */
   const S = window.SITE || {};
   const zap = $("[data-whats]");
+  const zap2 = $("[data-whats2]");
+  if (zap2 && S.whatsapp2) zap2.href = `https://wa.me/${String(S.whatsapp2.numero).replace(/\D/g, "")}?text=${encodeURIComponent(S.whatsapp2.mensagem || "")}`;
   if (zap && S.whatsapp) zap.href = `https://wa.me/${String(S.whatsapp.numero).replace(/\D/g, "")}?text=${encodeURIComponent(S.whatsapp.mensagem || "")}`;
 
   /* ── Passos com o mesmo "andamento" ─────────────────────────────────── */

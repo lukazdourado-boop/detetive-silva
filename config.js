@@ -6,6 +6,11 @@ window.SITE = {
     mensagem: "Olá! Gostaria de falar com a Detetive Silva sobre um caso.",
   },
 
+  whatsapp2: {
+    numero: "5561991664450",
+    mensagem: "Olá! Gostaria de falar com a Detetive Silva sobre um caso.",
+  },
+
   contato: {
     email: "peritaelida@gmail.com",
     // Opcional: chave do Web3Forms (https://web3forms.com). Se vazio, usa FormSubmit.
