@@ -3,12 +3,12 @@ window.SITE = {
 
   whatsapp: {
     numero: "5561982269210", // só dígitos, ex.: 5511999998888
-    mensagem: "Olá! Gostaria de falar com a Detetive Silva sobre um caso.",
+    mensagem: "Olá, Silva! Vim pelo site da Detetive Silva e gostaria de falar com você sobre um caso.",
   },
 
   whatsapp2: {
     numero: "5561991664450",
-    mensagem: "Olá! Gostaria de falar com a Detetive Silva sobre um caso.",
+    mensagem: "Olá, Rodrigues! Vim pelo site da Detetive Silva e gostaria de falar com você sobre um caso.",
   },
 
   contato: {
